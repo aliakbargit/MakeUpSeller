@@ -1,4 +1,6 @@
-﻿@{
+﻿@model MakeUpSeller.Models.IndexPageViewModel
+
+@{
     ViewData["Title"] = "Home Page";
 
 }
@@ -24,62 +26,29 @@
                     </div>
                 </div>
                 <div class="col-12 cards row p-0">
+                    @foreach (Product product in Model.Products)
+                    {
                     <div class="col-12 card p-1 mt-1">
                         <div class="col-form-label-sm"></div>
                         <div class="form-row mb-2">
                             <div class="col-5">
-                                <label>Face Primer<span class="form-required"></span></label>
+                                <label>@product.Name<span class="form-required"></span></label>
                             </div>
 
                             <div class="col-4">
-                                <label>152</label>
+                                <label>@product.Price RM</label>
                             </div>
                             <div class="col-3">
-                                <div class="card-img rounded-circle text-center"> <img class="rounded-circle" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0OW5_TsXkV9YQ9dE1ki-2mW15TnZxuUD_nH_5bp_tA0ATE5R5_5tUjiRuMl505N1e8hBYClk&usqp=CAc" width="70"></div>
+                                <div class="card-img rounded-circle text-center"> <img class="rounded-circle" src="@product.Image" width="70"></div>
                             </div>
                         </div>
                     </div>
                     <div class="col-12 card p-1 mt-1">
-                        <button type="submit" class="btn btn-info w-100"><span class="text-white">Add</span></button>
+                        <a class="btn btn-info w-100" asp-action="AddToOderItem" asp-route-id="@product.Id"><span class="text-white">Add</span></a>
+                    </div>
+                    <br />
+                    }
 
-                    </div>
-                    <br />
-                    <div class="col-12 card p-1 mt-1">
-                        <div class="col-form-label-sm"></div>
-                        <div class="form-row mb-2">
-                            <div class="col-5">
-                                <label>BB Cream<span class="form-required"></span></label>
-                            </div>
-                            <div class="col-4">
-                                <label>105</label>
-                            </div>
-                            <div class="col-3">
-                                <div class="card-img rounded-circle text-center"> <img class="rounded-circle" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTM2vn3AJTGyKdAIAPNmX7bBQFCo_JKIEyyzHif39YFfikTxy0hbd8_uOGogLvoBIOwuZorl8A&usqp=CAc" width="70"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 card p-1 mt-1">
-                        <button type="submit" class="btn btn-info w-80"><span class="text-white">Add</span></button>
-                    </div>
-                  
-                    <br />
-                    <div class="col-12 card p-1 mt-1">
-                        <div class="col-form-label-sm"></div>
-                        <div class="form-row mb-2">
-                            <div class="col-5">
-                                <label>Bronzer<span class="form-required"></span></label>
-                            </div>
-                            <div class="col-4">
-                                <label> 90</label>
-                            </div>
-                            <div class="col-3">
-                                <div class="card-img rounded-circle text-center"> <img class="rounded-circle" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPCvsFDRsi5Sxb-rbRoPdtjGq-1s--YqX9pg&usqp=CAU" width="70"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 card p-1 mt-1">
-                        <button type="submit" class="btn btn-info w-100"><span class="text-white">Add</span></button>
-                    </div>
                 </div>
             </div>
         </div>
@@ -91,40 +60,27 @@
         </div>
         <div class="col-12 p-0">
             <div class="col-12 border" style="height:48vh; max-height:90vh;">
-
+                @foreach (OrderItem item in Model.OrderItems) {
                 <div class="col-12 d-flex flex-wrap justify-content-between bg-white border-bottom">
-                    <div class="col-8 d-inline"> Name </div>
+                    <div class="col-8 d-inline"> @item.Name </div>
                     <div class="col-4 d-inline text-right">
-                        <span>23 RM</span>
+                        <span>@item.Price RM</span>
                     </div>
                 </div>
-
-                <div class="col-12 d-flex flex-wrap justify-content-between bg-white border-bottom">
-                    <div class="col-8 d-inline"> Name </div>
-                    <div class="col-4 d-inline text-right">
-                        <span>23 RM</span>
-                    </div>
-                </div>
-
-                <div class="col-12 d-flex flex-wrap justify-content-between bg-white border-bottom">
-                    <div class="col-8 d-inline"> Name </div>
-                    <div class="col-4 d-inline text-right">
-                        <span>23 RM</span>
-                    </div>
-                </div>
-
+                }
             </div>
         </div>
+
         <div class="col-12 row h-25 m-0 p-0">
             <div class="col-6 card p-0">
-                <div class="p-2 mb-1 bg-primary text-white"> Total price : <span> 156 RM</span></div>
+                <div class="p-2 mb-1 bg-primary text-white"> Total price : <span> @Model.Price RM</span></div>
             </div>
             <div class="col-6 card">
                 <p class="text-center">
                     <label>Order Confirm </label>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-danger">Cancel</button>
-                        <button type="button" class="btn btn-success" data-dismiss="modal">Confirm</button>
+                        <a asp-action="Cancel" class="btn btn-danger">Cancel</a>
+                        <a asp-action="Confirm" class="btn btn-success">Confirm</a>
                     </div>
             </div>
         </div>
@@ -136,24 +92,27 @@
         </div>
         <div class="col-12 p-0">
             <div class="col-12 border" style="height:48vh; max-height:90vh;">
+                @foreach (var item in Model.Competeds)
+                {
                 <div class="col-12 d-flex flex-wrap bg-white border-bottom">
-                    <div class="col-6 d-inline"> Name </div>
-                    <div class="col-3 d-inline"> 23 </div>
+                    <div class="col-6 d-inline"> @item.Name </div>
+                    <div class="col-3 d-inline"> @item.Price </div>
                     <div class="col-3 d-inline text-right">
-                        <button type="button" class="btn btn-info">Remove</button>
+                        <a asp-action="RemoveFromComplete" asp-route-id="@item.Id" class="btn btn-info">Remove</a>
                     </div>
                 </div>
+                }
             </div>
         </div>
         <div class="col-12 row h-25 m-0 p-0">
             <div class="col-6 card p-0">
-                <div class="p-2 mb-1 bg-primary text-white"> Total Sold : <span> 3300 </span> RM</div>
+                <div class="p-2 mb-1 bg-primary text-white"> Total Sold : <span> @Model.Total </span> RM</div>
             </div>
             <div class="col-6 card">
                 <p class="text-center">
                     <label>Order Confirm </label>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-danger">Clear Data</button>
+                        <a asp-action="ClearAll" class="btn btn-danger">Clear Data</a>
                     </div>
             </div>
         </div>

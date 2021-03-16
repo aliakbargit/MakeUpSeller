@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using MakeUpSeller.Models;
 
 namespace MakeUpSeller.Data
 {
@@ -12,5 +13,10 @@ namespace MakeUpSeller.Data
             : base(options)
         {
         }
+
+        public DbSet<Product> Products { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
+        public DbSet<Completed> Completeds { get; set; }
+
     }
 }
