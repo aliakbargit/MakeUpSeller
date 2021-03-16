@@ -2,12 +2,11 @@
     ViewData["Title"] = "Home Page";
 
 }
+<link rel="stylesheet" href="~/css/scrollbar-hide.css" />
 
-
-<div class="container-fluid row">
-    <div class="w-50 p-1">
-
-        <div class="card-header">
+<div class="container-fluid d-flex flex-row flex-nowrap">
+    <div class="p-1 col-4">
+        <div class="col-12 card-header p-0">
             <div class="p-2 mb-1 bg-primary text-white"> MakeUp Products</div>
         </div>
         <div class="col-12 border d-flex m-0 p-0 pre-scrollable" style="height: 68vh; max-height: 80vh;">
@@ -62,64 +61,7 @@
                     <div class="col-12 card p-1 mt-1">
                         <button type="submit" class="btn btn-info w-80"><span class="text-white">Add</span></button>
                     </div>
-                    <br />
-                    <div class="col-12 card p-1 mt-1">
-                        <div class="col-form-label-sm"></div>
-                        <div class="form-row mb-2">
-                            <div class="col-5">
-                                <label>Concealer<span class="form-required"></span></label>
-                            </div>
-                            <div class="col-4">
-                                <label>180</label>
-                            </div>
-                            <div class="col-3">
-                                <div class="card-img rounded-circle text-center"> <img class="rounded-circle" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMjy12znrL4CSDV0XYahTaNVUqNAUPGLJtbrnJe9jCXbC-2GgSnffisDZQWUGfQ2yUQuMILc4&usqp=CAc" width="70"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 card p-1 mt-1">
-                        <button type="submit" class="btn btn-info w-100"><span class="text-white">Add</span></button>
-
-                    </div>
-                    <br />
-
-                    <div class="col-12 card p-1 mt-1">
-                        <div class="col-form-label-sm"></div>
-                        <div class="form-row mb-2">
-                            <div class="col-5">
-                                <label>Blush<span class="form-required"></span></label>
-                            </div>
-                            <div class="col-4">
-                                <label>75</label>
-                            </div>
-                            <div class="col-3">
-                                <div class="card-img rounded-circle text-center"> <img class="rounded-circle" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSE0w9WydNC9pz3YpcgpIezXtb9Ro71q1SrBFzTMCJI934PpGt3R0mbe7H7XtDKcq8b1QtYkSoO&usqp=CAc" width="70"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 card p-1 mt-1">
-                        <button type="submit" class="btn btn-info w-100"><span class="text-white">Add</span></button>
-
-                    </div>
-                    <br />
-                    <div class="col-12 card p-1 mt-1">
-                        <div class="col-form-label-sm"></div>
-                        <div class="form-row mb-2">
-                            <div class="col-5">
-                                <label>Highlighter<span class="form-required"></span></label>
-                            </div>
-                            <div class="col-4">
-                                <label>101</label>
-                            </div>
-                            <div class="col-3">
-                                <div class="card-img rounded-circle text-center"> <img class="rounded-circle" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTp5pximZsqL7YSBc4uafaFJ2iozW0_RhO8BX_q7qk4Pj3bbzbCjoulRJ1D9lFN7uAHu847OU&usqp=CAc" width="70"></div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="col-12 card p-1 mt-1">
-                        <button type="submit" class="btn btn-info w-100"><span class="text-white">Add</span></button>
-                    </div>
+                  
                     <br />
                     <div class="col-12 card p-1 mt-1">
                         <div class="col-form-label-sm"></div>
@@ -143,108 +85,84 @@
         </div>
     </div>
 
-    <div class="w-50 p-1">
-        <div class="card-header">
+    <div class="p-1 col-4">
+        <div class="card-header p-0">
             <div class="p-2 mb-1 bg-primary text-white">  Order Processing</div>
         </div>
-        <div class="col-12">
+        <div class="col-12 p-0">
+            <div class="col-12 border" style="height:48vh; max-height:90vh;">
+
+                <div class="col-12 d-flex flex-wrap justify-content-between bg-white border-bottom">
+                    <div class="col-8 d-inline"> Name </div>
+                    <div class="col-4 d-inline text-right">
+                        <span>23 RM</span>
+                    </div>
+                </div>
+
+                <div class="col-12 d-flex flex-wrap justify-content-between bg-white border-bottom">
+                    <div class="col-8 d-inline"> Name </div>
+                    <div class="col-4 d-inline text-right">
+                        <span>23 RM</span>
+                    </div>
+                </div>
+
+                <div class="col-12 d-flex flex-wrap justify-content-between bg-white border-bottom">
+                    <div class="col-8 d-inline"> Name </div>
+                    <div class="col-4 d-inline text-right">
+                        <span>23 RM</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-12 row h-25 m-0 p-0">
+            <div class="col-6 card p-0">
+                <div class="p-2 mb-1 bg-primary text-white"> Total price : <span> 156 RM</span></div>
+            </div>
+            <div class="col-6 card">
+                <p class="text-center">
+                    <label>Order Confirm </label>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-danger">Cancel</button>
+                        <button type="button" class="btn btn-success" data-dismiss="modal">Confirm</button>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="p-1 col-4">
+        <div class="card-header p-0">
+            <div class="p-2 mb-1 bg-primary text-white">  Order Completed</div>
+        </div>
+        <div class="col-12 p-0">
             <div class="col-12 border" style="height:48vh; max-height:90vh;">
                 <div class="col-12 d-flex flex-wrap bg-white border-bottom">
                     <div class="col-6 d-inline"> Name </div>
-                    <div class="col-4 d-inline text-center">44  </div>
-                    <div class="col-2">
-                        <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#addNew">Remove</button>
+                    <div class="col-3 d-inline"> 23 </div>
+                    <div class="col-3 d-inline text-right">
+                        <button type="button" class="btn btn-info">Remove</button>
                     </div>
                 </div>
-
-
-                <div class="col-12 d-flex flex-wrap bg-white border-bottom">
-                    <div class="col-6 d-inline"> Name  </div>
-                    <div class="col-4 d-inline text-center"> 5 </div>
-                </div>
             </div>
-            </div>
+        </div>
         <div class="col-12 row h-25 m-0 p-0">
+            <div class="col-6 card p-0">
+                <div class="p-2 mb-1 bg-primary text-white"> Total Sold : <span> 3300 </span> RM</div>
+            </div>
             <div class="col-6 card">
-                <div class="p-2 mb-1 bg-primary text-white"> Total price : <span> 156 </span></div>
+                <p class="text-center">
+                    <label>Order Confirm </label>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-danger">Clear Data</button>
+                    </div>
             </div>
         </div>
-        <div class="col-12 card">
-            <p class="text-center">
-                <label>Order Confirm </label>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-danger">Cancel</button>
-                    <button type="button" class="btn btn-success" data-dismiss="modal">Confirm</button>
-                </div>
-        </div>
     </div>
-    
+
 </div>
-       
 
 
 
 
 
-    <!-- Modal -->
-    <div class="modal fade" id="addNew" tabindex="-1" role="dialog" aria-labelledby="set" aria-hidden="true" data-backdrop="static" data-keyboard="false">
-        <div class="modal-dialog modal-md" role="document">
-            <form ng-submit="crea(input)">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="myModalLabel">Order Remove</h5>
-                    </div>
-                    <div class="modal-body">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-12 col-lg-6 form-control-plaintext">
-                                    <label class="form-label">
-                                        Product Name <span class="required"></span>
-                                    </label>
-                                </div>
-                                <div class="col-12 col-lg-6">
-                                    <select id="Product" name="Product">
-                                        <option value="">Face Primer</option>
-                                        <option value="">   BB Cream </option>
-                                        <option value="">Concealer</option>
-                                        <option value="">Blush</option>
-                                        <option value="">  Highlighter  </option>
-                                        <option value="">Bronzer</option>
-                                    </select>
 
-                                </div>
-                            </div>
-
-                            <br />
-                            <div class="row">
-                                <div class="col-12 col-lg-6 form-control-plaintext">
-                                    <label class="form-label">
-                                        Price<span class="required"></span>
-                                    </label>
-
-                                </div>
-                                <div class="col-12 col-lg-6">
-                                    <select id="cars" name="cars">
-                                        <option value="">152 </option>
-                                        <option value="">105</option>
-                                        <option value="">180</option>
-                                        <option value="">75</option>
-                                        <option value="">101</option>
-                                        <option value="">90</option>
-                                    </select>
-
-
-                                </div>
-                            </div>
-
-                            <div class="modal-footer">
-                                <button type="submit" class="btn btn-success btn-blue">Confirm</button>
-                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
